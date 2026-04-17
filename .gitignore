@@ -1,0 +1,4 @@
+# Git ignore para repo de deploy
+.DS_Store
+Thumbs.db
+*.log
