@@ -25,12 +25,8 @@ COPY dist/ /usr/share/nginx/html/
 RUN chown -R scopios:scopios /usr/share/nginx/html \
     && chown -R scopios:scopios /var/cache/nginx \
     && chown -R scopios:scopios /var/log/nginx \
-    && touch /var/run/nginx.pid \
-    && chown -R scopios:scopios /var/run/nginx.pid
-
-# Crear directorio temporal con permisos correctos
-RUN mkdir -p /tmp/nginx \
-    && chown -R scopios:scopios /tmp/nginx
+    && mkdir -p /tmp/nginx \
+    && chown -R scopios:scopios /tmp
 
 # Cambiar a usuario sin privilegios
 USER scopios
